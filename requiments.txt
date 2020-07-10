@@ -1,0 +1,2 @@
+axe-selenium-python==2.1.6
+pytest==5.4.3
