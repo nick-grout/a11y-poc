@@ -30,7 +30,7 @@ def wait_until_success(cb, *args, tries=3, interval=1, **kwargs):
     raise exception
 
 
-@pytest.fixture
+@pytest.fixture(scope='module')
 def driver():
     """
     Start the driver and log into TP
