@@ -1,0 +1,18 @@
+version: "3"
+services:
+
+  chrome-standalone:
+    image: selenium/standalone-chrome:3.141.59-20200525
+    container_name: chrome-standalone
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - "4444:4444"
+
+  tests:
+    build: .
+    depends_on:
+      - chrome-standalone
+    environment:
+      - PROD=true
+    command: ["./sleep_and_test.sh"]
